@@ -22,9 +22,9 @@ class Patrimonio {
         return $datos;
     }
 
-    public static function getWhere($codigo) {
+    public static function getWhere($id_sala) {
         $db = new Connection();
-        $query = "SELECT * FROM Patrimonio WHERE codigo = '$codigo'";
+        $query = "SELECT * FROM Patrimonio WHERE ID_sala = '$id_sala'";
         $resultado = $db->query($query);
         $datos = [];
         if ($resultado->num_rows) {
@@ -32,8 +32,7 @@ class Patrimonio {
                 $datos[] = [
                     'codigo' => $row['codigo'],
                     'item' => $row['item'],
-                    'status' => $row['status'],
-                    'ID_sala' => $row['ID_sala']
+                    'status' => $row['status']
                 ];
             }
             return $datos;

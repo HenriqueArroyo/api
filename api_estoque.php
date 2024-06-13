@@ -3,8 +3,8 @@ require_once "models/Estoque.php";
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-        if (isset($_GET['ID_estoque'])) {
-            echo json_encode(Estoque::getWhere($_GET['ID_estoque']));
+        if (isset($_GET['ID_sala'])) {
+            echo json_encode(Estoque::getWhere($_GET['ID_sala']));
         } else {
             echo json_encode(Estoque::getAll());
         }

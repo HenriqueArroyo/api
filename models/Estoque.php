@@ -22,9 +22,9 @@ class Estoque {
         return $datos;
     }
 
-    public static function getWhere($id_estoque) {
+    public static function getWhere($id_sala) {
         $db = new Connection();
-        $query = "SELECT * FROM Estoque WHERE ID_estoque = $id_estoque";
+        $query = "SELECT * FROM Estoque WHERE ID_sala = $id_sala";
         $resultado = $db->query($query);
         $datos = [];
         if ($resultado->num_rows) {
@@ -32,8 +32,7 @@ class Estoque {
                 $datos[] = [
                     'ID_estoque' => $row['ID_estoque'],
                     'item' => $row['item'],
-                    'quantidade' => $row['quantidade'],
-                    'ID_sala' => $row['ID_sala']
+                    'quantidade' => $row['quantidade']
                 ];
             }
             return $datos;

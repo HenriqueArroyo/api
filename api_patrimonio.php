@@ -3,8 +3,8 @@ require_once "models/Patrimonio.php";
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-        if (isset($_GET['codigo'])) {
-            echo json_encode(Patrimonio::getWhere($_GET['codigo']));
+        if (isset($_GET['ID_sala'])) {
+            echo json_encode(Patrimonio::getWhere($_GET['ID_sala']));
         } else {
             echo json_encode(Patrimonio::getAll());
         }
